@@ -1,0 +1,134 @@
+# Pannello di gestione del sito Napan Group (Pages CMS, app.pagescms.org)
+content:
+  - name: impostazioni
+    label: Dati del sito
+    type: file
+    path: _data/impostazioni.yml
+    format: yaml
+    fields:
+      # ---------- Dati societari (obbligatori per legge sul sito)
+      - name: ragione_sociale
+        label: Ragione sociale
+        type: string
+        description: "Obbligatorio per legge. Es. Napan Group S.r.l."
+      - name: sede_legale
+        label: Sede legale
+        type: string
+        description: "Obbligatorio per legge. Via, numero civico, CAP, Città (Provincia)"
+      - name: piva
+        label: Partita IVA
+        type: string
+        description: "Obbligatorio per legge. 11 cifre, senza IT davanti"
+        pattern:
+          regex: "^$|^[0-9]{11}$"
+          message: "La partita IVA deve avere 11 cifre"
+      - name: codice_fiscale
+        label: Codice fiscale
+        type: string
+        description: "Solo se diverso dalla partita IVA"
+        pattern:
+          regex: "^$|^[0-9]{11}$|^[A-Za-z0-9]{16}$"
+          message: "Il codice fiscale deve avere 11 cifre o 16 caratteri"
+      - name: rea
+        label: Numero REA
+        type: string
+        description: "Obbligatorio per legge. Es. CE-123456"
+      - name: capitale_sociale
+        label: Capitale sociale
+        type: string
+        description: "Obbligatorio per legge. Es. € 10.000,00 i.v."
+      - name: pec
+        label: PEC
+        type: string
+        description: "Obbligatoria per legge"
+        pattern:
+          regex: "^$|^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+          message: "Indirizzo PEC non valido"
+
+      # ---------- Contatti
+      - name: email_info
+        label: Email generale
+        type: string
+        description: "Usata dal pulsante Scrivi una email nella home"
+        pattern:
+          regex: "^$|^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+          message: "Indirizzo email non valido"
+      - name: telefono
+        label: Telefono
+        type: string
+        description: "Lascia vuoto per non mostrarlo"
+        pattern:
+          regex: "^$|^[0-9 +().\\/-]{6,25}$"
+          message: "Usa solo cifre, spazi e il simbolo +"
+      - name: email_privacy
+        label: Email per richieste privacy
+        type: string
+        description: "Indicata nelle informative privacy e cookie"
+        pattern:
+          regex: "^$|^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+          message: "Indirizzo email non valido"
+
+      # ---------- Società del gruppo
+      - name: sirent_url
+        label: "Sirent: indirizzo del sito"
+        type: string
+        description: "Completo di https://, es. https://www.sirent.it. Se vuoto il pulsante non compare"
+        pattern:
+          regex: "^$|^https?://[^\\s]+\\.[^\\s]+$"
+          message: "Scrivi l'indirizzo completo, es. https://www.sito.it"
+      - name: sirent_descrizione
+        label: "Sirent: descrizione"
+        type: text
+      - name: maka_url
+        label: "Maka: indirizzo del sito"
+        type: string
+        description: "Completo di https://"
+        pattern:
+          regex: "^$|^https?://[^\\s]+\\.[^\\s]+$"
+          message: "Scrivi l'indirizzo completo, es. https://www.sito.it"
+      - name: maka_descrizione
+        label: "Maka: descrizione"
+        type: text
+      - name: maka_energy_descrizione
+        label: "Maka Energy: descrizione"
+        type: text
+        description: "Compare sotto Maka, dopo il nome Maka Energy"
+      - name: maka_energy_url
+        label: "Maka Energy: indirizzo del sito"
+        type: string
+        description: "Solo se ha un sito proprio"
+        pattern:
+          regex: "^$|^https?://[^\\s]+\\.[^\\s]+$"
+          message: "Scrivi l'indirizzo completo, es. https://www.sito.it"
+      - name: naren_url
+        label: "Naren Immobiliare: indirizzo del sito"
+        type: string
+        description: "Completo di https://"
+        pattern:
+          regex: "^$|^https?://[^\\s]+\\.[^\\s]+$"
+          message: "Scrivi l'indirizzo completo, es. https://www.sito.it"
+      - name: naren_descrizione
+        label: "Naren Immobiliare: descrizione"
+        type: text
+
+      # ---------- Informative privacy e cookie
+      - name: fornitore_email
+        label: Fornitore della posta elettronica
+        type: string
+        description: "Es. Aruba S.p.A., Google Ireland Ltd, Microsoft Ireland"
+      - name: trasferimenti_extra_ue
+        label: Altri servizi con dati fuori dall'UE
+        type: text
+        description: "Lascia vuoto se non ce ne sono. Es. Google Workspace"
+      - name: dpo
+        label: Responsabile protezione dati (DPO)
+        type: string
+        description: "Nome e contatto, solo se nominato"
+      - name: durata_log
+        label: Conservazione dei log
+        type: string
+        description: "Es. 12 mesi"
+      - name: data_aggiornamento
+        label: Data di aggiornamento delle informative
+        type: string
+        description: "Aggiornala quando cambi i dati delle informative. Es. 25 ottobre 2026"
