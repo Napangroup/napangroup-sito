@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="it" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description | escape }}">
+{%- if page.noindex %}
+  <meta name="robots" content="noindex">
+{%- else %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url | remove: 'index.html' }}">
+{%- endif %}
+  <meta name="theme-color" content="#0F1E33">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Napan Group">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url | remove: 'index.html' }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-napan.png">
+  <link rel="preload" href="/assets/fonts/lora-var.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+{%- if page.url == "/" %}
+{%- include vars.html %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Napan Group",
+    {%- if ragione != "" %}
+    "legalName": {{ ragione | jsonify }},
+    {%- endif %}
+    {%- if piva != "" %}
+    "vatID": {{ piva | prepend: "IT" | jsonify }},
+    {%- endif %}
+    {%- if email_info != "" %}
+    "email": {{ email_info | jsonify }},
+    {%- endif %}
+    {%- if telefono != "" %}
+    "telephone": {{ telefono | jsonify }},
+    {%- endif %}
+    {%- if sede != "" %}
+    "address": {{ sede | jsonify }},
+    {%- endif %}
+    "url": "https://www.napangroup.it/",
+    "logo": "https://www.napangroup.it/assets/img/logo-napan.svg"
+  }
+  </script>
+{%- endif %}
+</head>
+<body>
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+</body>
+</html>

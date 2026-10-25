@@ -1,0 +1,30 @@
+{%- comment -%}
+  Legge _data/impostazioni.yml e prepara variabili già "pulite" (testo vuoto se il campo non è compilato).
+  Va incluso in cima a ogni layout e pagina che usa i dati.
+{%- endcomment -%}
+{%- assign s = site.data.impostazioni -%}
+{%- assign ragione = s.ragione_sociale | strip -%}
+{%- assign sede = s.sede_legale | strip -%}
+{%- assign piva = s.piva | strip | remove: " " | remove: "IT" -%}
+{%- assign cf = s.codice_fiscale | strip | remove: " " | upcase -%}
+{%- assign rea = s.rea | strip -%}
+{%- assign capitale = s.capitale_sociale | strip -%}
+{%- assign pec = s.pec | strip -%}
+{%- assign email_info = s.email_info | strip -%}
+{%- assign telefono = s.telefono | strip -%}
+{%- assign tel_link = telefono | remove: " " | remove: "." | remove: "-" | remove: "/" | remove: "(" | remove: ")" -%}
+{%- assign email_privacy = s.email_privacy | strip -%}
+{%- assign sirent_url = s.sirent_url | strip -%}
+{%- assign sirent_desc = s.sirent_descrizione | strip -%}
+{%- assign maka_url = s.maka_url | strip -%}
+{%- assign maka_desc = s.maka_descrizione | strip -%}
+{%- assign energy_desc = s.maka_energy_descrizione | strip -%}
+{%- assign energy_url = s.maka_energy_url | strip -%}
+{%- assign naren_url = s.naren_url | strip -%}
+{%- assign naren_desc = s.naren_descrizione | strip -%}
+{%- assign fornitore_email = s.fornitore_email | strip -%}
+{%- assign extra_ue = s.trasferimenti_extra_ue | strip -%}
+{%- assign dpo = s.dpo | strip -%}
+{%- assign durata_log = s.durata_log | strip -%}
+{%- assign aggiornamento = s.data_aggiornamento | strip -%}
+{%- if ragione != "" -%}{%- assign nome = ragione -%}{%- else -%}{%- assign nome = "Napan Group" -%}{%- endif -%}

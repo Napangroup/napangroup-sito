@@ -1,0 +1,14 @@
+# Napan Group — configurazione Jekyll per GitHub Pages
+title: Napan Group
+url: "https://www.napangroup.it"
+lang: it
+timezone: Europe/Rome
+
+# I dati modificabili (dati societari, contatti, società) sono in _data/impostazioni.yml
+# e si compilano dal pannello Pages CMS (app.pagescms.org).
+
+exclude:
+  - LEGGIMI.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock

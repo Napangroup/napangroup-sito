@@ -1,0 +1,17 @@
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Napan Group, torna alla home">
+        <img src="/assets/img/logo-napan.svg" alt="Napan Group" width="154" height="40">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Navigazione principale">
+        <ul>
+          <li><a href="{% unless page.url == '/' %}/{% endunless %}#gruppo">Il gruppo</a></li>
+          <li><a href="{% unless page.url == '/' %}/{% endunless %}#societa">Le società</a></li>
+          <li><a href="{% unless page.url == '/' %}/{% endunless %}#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>

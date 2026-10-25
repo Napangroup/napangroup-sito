@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{%- include vars.html %}
+  <main id="contenuto">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>{{ page.heading }}</h1>
+{%- if aggiornamento != "" %}
+        <p>Ultimo aggiornamento: {{ aggiornamento | escape }}</p>
+{%- endif %}
+      </div>
+    </div>
+    <div class="legal">
+      <div class="wrap">
+        <nav class="toc" aria-label="Indice della pagina">
+          <p>In questa pagina</p>
+          <ol>
+{%- for voce in page.indice %}
+            <li><a href="#{{ voce.id }}">{{ voce.titolo }}</a></li>
+{%- endfor %}
+          </ol>
+        </nav>
+        <article>
+{{ content }}
+        </article>
+      </div>
+    </div>
+  </main>

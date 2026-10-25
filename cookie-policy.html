@@ -1,0 +1,50 @@
+---
+layout: legal
+title: "Cookie policy | Napan Group"
+description: "Informativa sull'uso dei cookie del sito napangroup.it."
+heading: "Cookie policy"
+indice:
+  - { id: cosa, titolo: "Cosa sono i cookie" }
+  - { id: questo-sito, titolo: "Quali cookie usa questo sito" }
+  - { id: consenso, titolo: "Perché non ti chiediamo il consenso" }
+  - { id: gestione, titolo: "Come gestire i cookie dal browser" }
+  - { id: titolare, titolo: "Titolare e contatti" }
+---
+{%- include vars.html %}
+<section id="cosa">
+  <h2>Cosa sono i cookie</h2>
+  <p>I cookie sono piccoli file di testo che i siti visitati salvano nel browser, per essere poi riletti alle visite successive. Strumenti analoghi, come il local storage o i pixel, sono trattati allo stesso modo. Si distinguono in cookie tecnici, necessari al funzionamento del sito, e cookie di profilazione o di analisi, che richiedono il consenso preventivo dell'utente.</p>
+</section>
+
+<section id="questo-sito">
+  <h2>Quali cookie usa questo sito</h2>
+  <p>Il sito www.napangroup.it è stato progettato per non tracciare i visitatori:</p>
+  <ul>
+    <li>non utilizza cookie, né tecnici né di profilazione o marketing;</li>
+    <li>non utilizza strumenti di statistica o di analisi del traffico (ad esempio Google Analytics);</li>
+    <li>non incorpora contenuti di terze parti come mappe, video, pulsanti social o caratteri tipografici caricati da server esterni: anche i caratteri sono ospitati insieme al sito;</li>
+    <li>non salva informazioni nel tuo browser tramite local storage o tecnologie simili.</li>
+  </ul>
+</section>
+
+<section id="consenso">
+  <h2>Perché non ti chiediamo il consenso</h2>
+  <p>Secondo l'art. 122 del Codice in materia di protezione dei dati personali (d.lgs. 196/2003) e le Linee guida del Garante sui cookie e altri strumenti di tracciamento del 10 giugno 2021, il consenso è necessario solo per i cookie e gli strumenti diversi da quelli tecnici. Il sito non ne utilizza, quindi non mostra un banner per la raccolta del consenso.</p>
+  <p>Se in futuro introdurremo strumenti che richiedono il consenso, aggiorneremo questa pagina e ti chiederemo una scelta esplicita prima di attivarli, con la possibilità di rifiutare con la stessa facilità con cui accetti.</p>
+</section>
+
+<section id="gestione">
+  <h2>Come gestire i cookie dal browser</h2>
+  <p>Puoi in ogni momento visualizzare, bloccare o cancellare i cookie dalle impostazioni del tuo browser.</p>
+  <ul>
+    <li><a href="https://support.google.com/chrome/answer/95647?hl=it" rel="noopener">Google Chrome</a></li>
+    <li><a href="https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox-desktop" rel="noopener">Mozilla Firefox</a></li>
+    <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" rel="noopener">Apple Safari</a></li>
+    <li><a href="https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" rel="noopener">Microsoft Edge</a></li>
+  </ul>
+</section>
+
+<section id="titolare">
+  <h2>Titolare e contatti</h2>
+  <p>Il titolare del trattamento è {{ nome | escape }}{% if sede != "" %}, con sede legale in {{ sede | escape }}{% endif %}{% if piva != "" %}, P.IVA {{ piva | escape }}{% endif %}.{% if email_privacy != "" %} Per qualsiasi domanda puoi scrivere a <a href="mailto:{{ email_privacy | escape }}">{{ email_privacy | escape }}</a>.{% endif %} Per tutte le informazioni sul trattamento dei dati personali consulta la <a href="/privacy-policy.html">privacy policy</a>.</p>
+</section>

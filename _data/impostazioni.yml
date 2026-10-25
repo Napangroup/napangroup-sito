@@ -1,0 +1,34 @@
+# Dati del sito Napan Group.
+# Si modificano dal pannello Pages CMS: non serve toccare questo file a mano.
+# I campi lasciati vuoti non vengono mostrati sul sito.
+
+# Dati societari
+ragione_sociale: ""
+sede_legale: ""
+piva: ""
+codice_fiscale: ""
+rea: ""
+capitale_sociale: ""
+pec: ""
+
+# Contatti
+email_info: "info@napangroup.it"
+telefono: ""
+email_privacy: "privacy@napangroup.it"
+
+# Società del gruppo
+sirent_url: ""
+sirent_descrizione: "Noleggio a lungo termine di auto e veicoli commerciali per privati, professionisti e aziende, con un canone mensile e i servizi di gestione inclusi."
+maka_url: ""
+maka_descrizione: "Contact center in outsourcing per aziende: assistenza clienti, gestione delle chiamate in entrata e in uscita e attività commerciali per conto dei partner."
+maka_energy_descrizione: "è il ramo dedicato all'efficientamento energetico: consulenza e soluzioni per ridurre consumi e costi di famiglie e imprese."
+maka_energy_url: ""
+naren_url: ""
+naren_descrizione: "Detiene il patrimonio immobiliare del gruppo e lo concede in locazione, curandone la gestione e la valorizzazione nel tempo."
+
+# Informative privacy e cookie
+fornitore_email: "Aruba S.p.A."
+trasferimenti_extra_ue: ""
+dpo: ""
+durata_log: "12 mesi"
+data_aggiornamento: "25 ottobre 2026"

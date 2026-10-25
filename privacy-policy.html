@@ -1,0 +1,122 @@
+---
+layout: legal
+title: "Privacy policy | Napan Group"
+description: "Informativa sul trattamento dei dati personali del sito napangroup.it ai sensi del Regolamento (UE) 2016/679."
+heading: "Privacy policy"
+indice:
+  - { id: titolare, titolo: "Titolare del trattamento" }
+  - { id: dati, titolo: "Quali dati trattiamo" }
+  - { id: finalita, titolo: "Perché li trattiamo e su quale base giuridica" }
+  - { id: conferimento, titolo: "È obbligatorio fornire i dati?" }
+  - { id: modalita, titolo: "Come li trattiamo" }
+  - { id: destinatari, titolo: "A chi possono essere comunicati" }
+  - { id: trasferimenti, titolo: "Trasferimenti fuori dall'Unione europea" }
+  - { id: conservazione, titolo: "Per quanto tempo li conserviamo" }
+  - { id: diritti, titolo: "I tuoi diritti" }
+  - { id: modifiche, titolo: "Modifiche a questa informativa" }
+---
+{%- include vars.html %}
+<section id="titolare">
+  <h2>Titolare del trattamento</h2>
+  <p>Questa informativa è resa ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (GDPR) a chi visita il sito www.napangroup.it o contatta la società attraverso i recapiti pubblicati.</p>
+  <p>Il titolare del trattamento è {{ nome | escape }}{% if sede != "" %}, con sede legale in {{ sede | escape }}{% endif %}{% if piva != "" %}, P.IVA {{ piva | escape }}{% endif %} (di seguito “Napan” o “la Società”).</p>
+{%- if email_privacy != "" or pec != "" %}
+  <ul>
+{%- if email_privacy != "" %}
+    <li>Email per le richieste privacy: <a href="mailto:{{ email_privacy | escape }}">{{ email_privacy | escape }}</a></li>
+{%- endif %}
+{%- if pec != "" %}
+    <li>PEC: <a href="mailto:{{ pec | escape }}">{{ pec | escape }}</a></li>
+{%- endif %}
+  </ul>
+{%- endif %}
+{%- if dpo != "" %}
+  <p>Il Responsabile della protezione dei dati (DPO) designato dalla Società è {{ dpo | escape }}.</p>
+{%- else %}
+  <p>La Società non ha designato un Responsabile della protezione dei dati (DPO), non ricorrendone l'obbligo ai sensi dell'art. 37 GDPR.</p>
+{%- endif %}
+</section>
+
+<section id="dati">
+  <h2>Quali dati trattiamo</h2>
+  <h3>Dati di navigazione</h3>
+  <p>I sistemi informatici che fanno funzionare il sito acquisiscono, nel normale esercizio, alcuni dati la cui trasmissione è implicita nell'uso dei protocolli di Internet: indirizzo IP, data e ora della richiesta, pagina richiesta, codice di risposta del server, tipo di browser e sistema operativo. Questi dati sono registrati nei log del server e servono a garantire il funzionamento tecnico e la sicurezza del sito.</p>
+  <h3>Dati che ci fornisci tu</h3>
+  <p>Se ci scrivi via email o PEC, o ci telefoni, trattiamo i dati che decidi di comunicarci: in genere nome, cognome, recapiti, eventuale società di appartenenza e il contenuto della richiesta. Ti chiediamo di non inviare dati sanitari o altre categorie particolari di dati se non strettamente necessari.</p>
+  <h3>Cookie</h3>
+  <p>Il sito non utilizza cookie di profilazione né strumenti di analisi o di terze parti. I dettagli sono nella <a href="/cookie-policy.html">cookie policy</a>.</p>
+</section>
+
+<section id="finalita">
+  <h2>Perché li trattiamo e su quale base giuridica</h2>
+  <table>
+    <thead><tr><th scope="col">Finalità</th><th scope="col">Base giuridica</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Finalità">Far funzionare il sito, garantirne la sicurezza e prevenire abusi</td><td data-label="Base giuridica">Legittimo interesse della Società (art. 6, par. 1, lett. f GDPR)</td></tr>
+      <tr><td data-label="Finalità">Rispondere alle tue richieste di informazioni o di collaborazione</td><td data-label="Base giuridica">Esecuzione di misure precontrattuali adottate su tua richiesta (art. 6, par. 1, lett. b) o legittimo interesse a rispondere (lett. f)</td></tr>
+      <tr><td data-label="Finalità">Adempiere a obblighi di legge, regolamenti o richieste delle autorità</td><td data-label="Base giuridica">Obbligo legale (art. 6, par. 1, lett. c)</td></tr>
+      <tr><td data-label="Finalità">Accertare, esercitare o difendere un diritto in sede giudiziaria</td><td data-label="Base giuridica">Legittimo interesse (art. 6, par. 1, lett. f)</td></tr>
+    </tbody>
+  </table>
+  <p>Non utilizziamo i tuoi dati per invio di comunicazioni promozionali né per attività di profilazione. Non adottiamo decisioni basate unicamente su trattamenti automatizzati.</p>
+</section>
+
+<section id="conferimento">
+  <h2>È obbligatorio fornire i dati?</h2>
+  <p>I dati di navigazione sono necessari per l'uso del sito. Fornire i dati per contattarci è facoltativo, ma senza di essi non potremmo rispondere alla tua richiesta.</p>
+</section>
+
+<section id="modalita">
+  <h2>Come li trattiamo</h2>
+  <p>I dati sono trattati con strumenti informatici e, quando necessario, cartacei, da personale autorizzato e istruito, adottando misure tecniche e organizzative adeguate a proteggerli da accessi non autorizzati, perdita o divulgazione. Il sito è servito esclusivamente tramite connessione cifrata (HTTPS).</p>
+</section>
+
+<section id="destinatari">
+  <h2>A chi possono essere comunicati</h2>
+  <p>I dati possono essere trattati, per conto della Società, da soggetti nominati responsabili del trattamento ai sensi dell'art. 28 GDPR, tra cui:</p>
+  <ul>
+    <li>GitHub, Inc., fornitore del servizio di pubblicazione del sito (GitHub Pages), che registra i dati di navigazione per finalità di sicurezza;</li>
+{%- if fornitore_email != "" %}
+    <li>{{ fornitore_email | escape }}, fornitore del servizio di posta elettronica;</li>
+{%- endif %}
+    <li>consulenti e professionisti che assistono la Società in materia amministrativa, fiscale e legale;</li>
+    <li>le società del gruppo (Sirent, Maka, Naren Immobiliare), solo quando la tua richiesta riguarda i loro servizi e per darvi seguito.</li>
+  </ul>
+  <p>I dati possono inoltre essere comunicati alle autorità competenti quando previsto dalla legge. Non sono diffusi né venduti.</p>
+</section>
+
+<section id="trasferimenti">
+  <h2>Trasferimenti fuori dall'Unione europea</h2>
+  <p>Il sito è pubblicato tramite GitHub Pages, servizio di GitHub, Inc. con sede negli Stati Uniti: i dati di navigazione possono quindi essere trattati negli Stati Uniti. Il trasferimento avviene sulla base della decisione di adeguatezza della Commissione europea relativa all'EU-US Data Privacy Framework, per le società certificate, o delle clausole contrattuali standard approvate dalla Commissione (articoli 45 e 46 GDPR).</p>
+{%- if extra_ue != "" %}
+  <p>Possono trattare dati fuori dallo Spazio economico europeo, con le stesse garanzie, anche i seguenti servizi: {{ extra_ue | escape }}.</p>
+{%- endif %}
+</section>
+
+<section id="conservazione">
+  <h2>Per quanto tempo li conserviamo</h2>
+  <ul>
+    <li>Dati di navigazione: per il tempo previsto dal fornitore del servizio di pubblicazione per finalità di sicurezza{% if durata_log != "" %}, di norma non oltre {{ durata_log | escape }}{% endif %}, salvo necessità di accertamento di reati.</li>
+    <li>Richieste di contatto: per il tempo necessario a gestirle e per i successivi 24 mesi, salvo che il rapporto prosegua in un contratto; in tal caso i dati sono conservati per la durata del contratto e per 10 anni dalla sua cessazione, come richiesto dalla normativa civilistica e fiscale.</li>
+  </ul>
+</section>
+
+<section id="diritti">
+  <h2>I tuoi diritti</h2>
+  <p>In qualsiasi momento puoi chiedere alla Società{% if email_privacy != "" %}, scrivendo a <a href="mailto:{{ email_privacy | escape }}">{{ email_privacy | escape }}</a>{% if pec != "" %} o via PEC a <a href="mailto:{{ pec | escape }}">{{ pec | escape }}</a>{% endif %}{% else %}, scrivendo ai recapiti indicati sopra{% endif %}:</p>
+  <ul>
+    <li>l'accesso ai tuoi dati e una copia degli stessi (art. 15);</li>
+    <li>la rettifica dei dati inesatti o l'integrazione di quelli incompleti (art. 16);</li>
+    <li>la cancellazione dei dati, nei casi previsti (art. 17);</li>
+    <li>la limitazione del trattamento (art. 18);</li>
+    <li>la portabilità dei dati che ci hai fornito, nei casi previsti (art. 20);</li>
+    <li>di opporti al trattamento basato sul legittimo interesse, per motivi connessi alla tua situazione particolare (art. 21).</li>
+  </ul>
+  <p>Rispondiamo entro un mese dalla richiesta, termine prorogabile nei casi previsti dall'art. 12 GDPR.</p>
+  <p>Se ritieni che il trattamento violi la normativa, puoi proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" rel="noopener">www.garanteprivacy.it</a>) o all'autorità di controllo dello Stato UE in cui risiedi o lavori.</p>
+</section>
+
+<section id="modifiche">
+  <h2>Modifiche a questa informativa</h2>
+  <p>La Società può aggiornare questa informativa, ad esempio in caso di nuove funzioni del sito o di modifiche normative. La data dell'ultimo aggiornamento è indicata in cima alla pagina.</p>
+</section>

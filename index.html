@@ -1,0 +1,119 @@
+---
+layout: default
+title: "Napan Group | Holding di partecipazioni"
+description: "Napan Group è la holding che detiene e coordina Sirent, Maka, Maka Energy e Naren Immobiliare: mobilità, servizi alle imprese, efficienza energetica e immobili."
+---
+{%- include vars.html %}
+  <main id="contenuto">
+    <section class="hero" aria-labelledby="titolo">
+      <div class="wrap">
+        <div>
+          <h1 id="titolo">Holding di partecipazioni in mobilità, servizi, energia e immobili.</h1>
+          <p class="lead">Napan detiene e coordina le società del gruppo: ne definisce l'indirizzo strategico, ne sostiene gli investimenti e ne accompagna la crescita.</p>
+          <div class="hero-actions">
+            <a class="btn btn-brass" href="#societa">Scopri le società</a>
+            <a class="link-quiet" href="#contatti">Contattaci</a>
+          </div>
+        </div>
+
+        <figure class="structure">
+          <figcaption>Struttura del gruppo</figcaption>
+          <ol class="tree">
+            <li>
+              <span class="root">Napan Group<small>Holding</small></span>
+              <ol>
+                <li><span class="node"><strong>Sirent</strong><span>Noleggio a lungo termine</span></span></li>
+                <li>
+                  <span class="node"><strong>Maka</strong><span>Contact center</span></span>
+                  <ol>
+                    <li><span class="node node--branch"><strong>Maka Energy</strong><span>Efficientamento energetico</span></span></li>
+                  </ol>
+                </li>
+                <li><span class="node"><strong>Naren Immobiliare</strong><span>Gestione e locazione immobili</span></span></li>
+              </ol>
+            </li>
+          </ol>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="gruppo" aria-labelledby="titolo-gruppo">
+      <div class="wrap">
+        <div class="split">
+          <h2 id="titolo-gruppo">Chi siamo</h2>
+          <div class="prose">
+            <p>Napan Group nasce per riunire sotto un'unica guida società che operano in settori diversi ma complementari.</p>
+            <p>La holding non vende servizi al pubblico: detiene le partecipazioni, ne cura la gestione finanziaria e mette a disposizione delle società controllate competenze, risorse e una visione comune. Ogni società mantiene il proprio marchio e la propria autonomia operativa, con un unico punto di riferimento per strategia e investimenti.</p>
+          </div>
+        </div>
+
+        <ul class="roles" aria-label="Il ruolo della holding">
+          <li>
+            <h3>Indirizzo strategico</h3>
+            <p>Definiamo gli obiettivi di medio e lungo periodo di ciascuna società e verifichiamo che le scelte operative li rispettino.</p>
+          </li>
+          <li>
+            <h3>Gestione finanziaria</h3>
+            <p>Coordiniamo risorse, investimenti e controllo di gestione, perché ogni società possa contare su basi solide.</p>
+          </li>
+          <li>
+            <h3>Sviluppo del gruppo</h3>
+            <p>Valutiamo nuove opportunità e favoriamo le sinergie tra le società, dalla clientela condivisa agli immobili in uso.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--stone" id="societa" aria-labelledby="titolo-societa">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="titolo-societa">Le società del gruppo</h2>
+          <p>Ogni società ha un proprio marchio e un proprio sito, dove trovi servizi, offerte e contatti dedicati.</p>
+        </div>
+
+        <ul class="companies">
+{% include company.html name="Sirent" sector="Noleggio a lungo termine" desc=sirent_desc url=sirent_url link="Visita il sito di Sirent" %}
+{% include company.html name="Maka" sector="Contact center" desc=maka_desc url=maka_url link="Visita il sito di Maka" branch_name="Maka Energy" branch_desc=energy_desc branch_url=energy_url %}
+{% include company.html name="Naren Immobiliare" sector="Gestione e locazione immobili" desc=naren_desc url=naren_url link="Visita il sito di Naren" %}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contatti" aria-labelledby="titolo-contatti">
+      <div class="wrap contacts">
+        <div class="intro">
+          <h2 id="titolo-contatti">Contatti</h2>
+          <p>Per informazioni sul gruppo, proposte di collaborazione o richieste istituzionali, scrivici. Per servizi e preventivi rivolgiti direttamente alla società di riferimento.</p>
+{%- if email_info != "" %}
+          <a class="btn btn-navy" href="mailto:{{ email_info | escape }}">Scrivi una email</a>
+{%- endif %}
+        </div>
+        <dl>
+{%- if sede != "" %}
+          <div>
+            <dt>Sede legale</dt>
+            <dd>{{ sede | escape }}</dd>
+          </div>
+{%- endif %}
+{%- if email_info != "" %}
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:{{ email_info | escape }}">{{ email_info | escape }}</a></dd>
+          </div>
+{%- endif %}
+{%- if pec != "" %}
+          <div>
+            <dt>PEC</dt>
+            <dd><a href="mailto:{{ pec | escape }}">{{ pec | escape }}</a></dd>
+          </div>
+{%- endif %}
+{%- if telefono != "" %}
+          <div>
+            <dt>Telefono</dt>
+            <dd><a href="tel:{{ tel_link | escape }}">{{ telefono | escape }}</a></dd>
+          </div>
+{%- endif %}
+        </dl>
+      </div>
+    </section>
+  </main>

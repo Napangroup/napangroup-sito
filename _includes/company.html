@@ -1,0 +1,17 @@
+          <li class="company">
+            <div>
+              <h3>{{ include.name }}</h3>
+              <span class="sector">{{ include.sector }}</span>
+            </div>
+            <div>
+              <p>{{ include.desc | escape }}</p>
+{%- if include.branch_desc and include.branch_desc != "" %}
+              <p class="branch"><strong>{{ include.branch_name }}</strong> {{ include.branch_desc | escape }}{% if include.branch_url and include.branch_url != "" %} <a href="{{ include.branch_url | escape }}" rel="noopener">Sito di {{ include.branch_name }}</a>{% endif %}</p>
+{%- endif %}
+            </div>
+{%- if include.url and include.url != "" %}
+            <a class="visit" href="{{ include.url | escape }}" rel="noopener">{{ include.link }}</a>
+{%- else %}
+            <span aria-hidden="true"></span>
+{%- endif %}
+          </li>

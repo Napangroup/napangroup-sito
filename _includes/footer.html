@@ -1,0 +1,30 @@
+{%- include vars.html -%}
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="top">
+        <img src="/assets/img/logo-napan-negativo.svg" alt="Napan Group" width="238" height="92">
+        <nav aria-label="Informazioni legali">
+          <ul>
+            <li><a href="/privacy-policy.html"{% if page.url == "/privacy-policy.html" %} aria-current="page"{% endif %}>Privacy policy</a></li>
+            <li><a href="/cookie-policy.html"{% if page.url == "/cookie-policy.html" %} aria-current="page"{% endif %}>Cookie policy</a></li>
+          </ul>
+        </nav>
+      </div>
+{%- capture legale -%}
+{%- if ragione != "" %}<span>{{ ragione | escape }}</span>{% endif -%}
+{%- if sede != "" %}<span>Sede legale {{ sede | escape }}</span>{% endif -%}
+{%- if piva != "" -%}
+  {%- if cf != "" and cf != piva %}<span>P.IVA {{ piva | escape }} – C.F. {{ cf | escape }}</span>{% else %}<span>P.IVA e C.F. {{ piva | escape }}</span>{% endif -%}
+{%- endif -%}
+{%- if rea != "" %}<span>REA {{ rea | escape }}</span>{% endif -%}
+{%- if capitale != "" %}<span>Capitale sociale {{ capitale | escape }}</span>{% endif -%}
+{%- if pec != "" %}<span>PEC <a href="mailto:{{ pec | escape }}">{{ pec | escape }}</a></span>{% endif -%}
+{%- endcapture -%}
+{%- if legale != "" %}
+      <p class="legal-data">{{ legale }}</p>
+{%- endif %}
+      <p class="copyright">© {{ site.time | date: "%Y" }} Napan Group. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
