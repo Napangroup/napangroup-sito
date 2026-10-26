@@ -11,6 +11,11 @@
   <link rel="canonical" href="{{ site.url }}{{ page.url | remove: 'index.html' }}">
 {%- endif %}
   <meta name="theme-color" content="#0F1E33">
+{%- assign gv = site.data.impostazioni.google_verifica | strip -%}
+{%- if gv contains 'content=' %}{% assign gv = gv | split: 'content="' | last | split: '"' | first | strip %}{% endif %}
+{%- if gv != "" %}
+  <meta name="google-site-verification" content="{{ gv | escape }}">
+{%- endif %}
   <link rel="icon" href="/favicon.ico?v=2" sizes="any">
   <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
   <link rel="icon" href="/favicon-32.png?v=2" sizes="32x32" type="image/png">

@@ -150,3 +150,8 @@ content:
         label: Data di aggiornamento delle informative
         type: string
         description: "Aggiornala quando cambi i dati delle informative. Es. 25 ottobre 2026"
+      # ---------- Google
+      - name: google_verifica
+        label: "Google Search Console: codice di verifica"
+        type: string
+        description: "Incolla qui il tag HTML che ti dà Google (metodo «Tag HTML»), anche intero. Serve solo per la verifica"
