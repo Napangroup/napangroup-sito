@@ -3,8 +3,19 @@
     <div class="wrap">
       <div class="top">
         <img src="/assets/img/logo-napan-negativo.svg" alt="Napan Group" width="238" height="92">
-        <nav aria-label="Informazioni legali">
+        <nav aria-label="Le società del gruppo">
+          <h2>Le società</h2>
           <ul>
+            <li><a href="{% if sirent_url != "" %}{{ sirent_url | escape }}{% else %}/#sirent{% endif %}"{% if sirent_url != "" %} rel="noopener"{% endif %}>Sirent</a></li>
+            <li><a href="{% if maka_url != "" %}{{ maka_url | escape }}{% else %}/#maka{% endif %}"{% if maka_url != "" %} rel="noopener"{% endif %}>Maka</a></li>
+            <li><a href="{% if energy_url != "" %}{{ energy_url | escape }}{% else %}/#maka-energy{% endif %}"{% if energy_url != "" %} rel="noopener"{% endif %}>Maka Energy</a></li>
+            <li><a href="{% if naren_url != "" %}{{ naren_url | escape }}{% else %}/#naren{% endif %}"{% if naren_url != "" %} rel="noopener"{% endif %}>Naren Immobiliare</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Informazioni legali">
+          <h2>Informazioni</h2>
+          <ul>
+            <li><a href="/#contatti">Contatti</a></li>
             <li><a href="/privacy-policy.html"{% if page.url == "/privacy-policy.html" %} aria-current="page"{% endif %}>Privacy policy</a></li>
             <li><a href="/cookie-policy.html"{% if page.url == "/cookie-policy.html" %} aria-current="page"{% endif %}>Cookie policy</a></li>
           </ul>

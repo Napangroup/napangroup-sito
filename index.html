@@ -4,59 +4,86 @@ title: "Napan Group | Holding di partecipazioni"
 description: "Napan Group è la holding che detiene e coordina Sirent, Maka, Maka Energy e Naren Immobiliare: mobilità, servizi alle imprese, efficienza energetica e immobili."
 ---
 {%- include vars.html %}
+{%- capture ico_car %}<path pathLength="1" d="M6 40 V33 L14 31 L22 22 H42 L52 31 L58 33 V40 H6"/><circle pathLength="1" cx="18" cy="42" r="6"/><circle pathLength="1" cx="46" cy="42" r="6"/><path pathLength="1" d="M24 24 L20 31 H48 L41 24 Z"/>{% endcapture -%}
+{%- capture ico_headset %}<path pathLength="1" d="M12 36 V30 A20 20 0 0 1 52 30 V36"/><rect pathLength="1" x="8" y="34" width="9" height="15" rx="3"/><rect pathLength="1" x="47" y="34" width="9" height="15" rx="3"/><path pathLength="1" d="M51 49 V52 A6 6 0 0 1 45 58 H36"/>{% endcapture -%}
+{%- capture ico_bolt %}<path pathLength="1" d="M36 6 L14 36 H30 L26 58 L50 26 H34 Z"/>{% endcapture -%}
+{%- capture ico_building %}<path pathLength="1" d="M10 58 V24 L32 8 L54 24 V58 Z"/><rect pathLength="1" x="20" y="28" width="8" height="8"/><rect pathLength="1" x="36" y="28" width="8" height="8"/><path pathLength="1" d="M27 58 V46 H37 V58"/>{% endcapture -%}
   <main id="contenuto">
+
+    <!-- Apertura con video -->
     <section class="hero" aria-labelledby="titolo">
+      <video class="hero-video" src="{{ video_apertura | escape }}"{% if video_apertura_std %} poster="/assets/video/napan-apertura.jpg"{% endif %} autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
       <div class="wrap">
-        <div>
-          <h1 id="titolo">Holding di partecipazioni in mobilità, servizi, energia e immobili.</h1>
-          <p class="lead">Napan detiene e coordina le società del gruppo: ne definisce l'indirizzo strategico, ne sostiene gli investimenti e ne accompagna la crescita.</p>
-          <div class="hero-actions">
+        <div class="hero-copy">
+          <p class="kicker rv">Holding di partecipazioni</p>
+          <h1 id="titolo" class="rv" style="--d:.1s">Mobilità, servizi, energia e immobili. <em>Un unico gruppo.</em></h1>
+          <p class="lead rv" style="--d:.25s">Napan detiene e coordina le società del gruppo: ne definisce l'indirizzo strategico, ne sostiene gli investimenti e ne accompagna la crescita.</p>
+          <div class="hero-actions rv" style="--d:.4s">
             <a class="btn btn-brass" href="#societa">Scopri le società</a>
-            <a class="link-quiet" href="#contatti">Contattaci</a>
+            <a class="btn btn-line" href="#video"><span class="play" aria-hidden="true"></span>Guarda il video</a>
           </div>
         </div>
-
-        <figure class="structure">
-          <figcaption>Struttura del gruppo</figcaption>
-          <ol class="tree">
-            <li>
-              <span class="root">Napan Group<small>Holding</small></span>
-              <ol>
-                <li><span class="node"><strong>Sirent</strong><span>Noleggio a lungo termine</span></span></li>
-                <li>
-                  <span class="node"><strong>Maka</strong><span>Contact center</span></span>
-                  <ol>
-                    <li><span class="node node--branch"><strong>Maka Energy</strong><span>Efficientamento energetico</span></span></li>
-                  </ol>
-                </li>
-                <li><span class="node"><strong>Naren Immobiliare</strong><span>Gestione e locazione immobili</span></span></li>
-              </ol>
-            </li>
-          </ol>
-        </figure>
+      </div>
+      <span class="scroll-cue" aria-hidden="true"></span>
+      <div class="hero-brands">
+        <div class="wrap">
+          <p>Le società del gruppo</p>
+          <ul>
+            <li>{% if sirent_url != "" %}<a href="{{ sirent_url | escape }}" rel="noopener">{% else %}<a href="#societa">{% endif %}<img src="/assets/img/societa/sirent-negativo.svg" alt="Sirent" width="101" height="34"></a></li>
+            <li class="b-maka">{% if maka_url != "" %}<a href="{{ maka_url | escape }}" rel="noopener">{% else %}<a href="#societa">{% endif %}<img src="/assets/img/societa/maka-negativo.svg" alt="Maka e Maka Energy" width="87" height="40"></a></li>
+            <li>{% if naren_url != "" %}<a href="{{ naren_url | escape }}" rel="noopener">{% else %}<a href="#societa">{% endif %}<img src="/assets/img/societa/naren-negativo.svg" alt="Naren Immobiliare" width="156" height="34"></a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
+    <!-- Fascia dei settori -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <ul>
+          <li>Noleggio a lungo termine</li><li>Contact center</li><li>Efficientamento energetico</li><li>Gestione immobiliare</li>
+          <li>Noleggio a lungo termine</li><li>Contact center</li><li>Efficientamento energetico</li><li>Gestione immobiliare</li>
+        </ul>
+        <ul>
+          <li>Noleggio a lungo termine</li><li>Contact center</li><li>Efficientamento energetico</li><li>Gestione immobiliare</li>
+          <li>Noleggio a lungo termine</li><li>Contact center</li><li>Efficientamento energetico</li><li>Gestione immobiliare</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Chi siamo -->
     <section class="section" id="gruppo" aria-labelledby="titolo-gruppo">
       <div class="wrap">
-        <div class="split">
-          <h2 id="titolo-gruppo">Chi siamo</h2>
-          <div class="prose">
-            <p>Napan Group nasce per riunire sotto un'unica guida società che operano in settori diversi ma complementari.</p>
-            <p>La holding non vende servizi al pubblico: detiene le partecipazioni, ne cura la gestione finanziaria e mette a disposizione delle società controllate competenze, risorse e una visione comune. Ogni società mantiene il proprio marchio e la propria autonomia operativa, con un unico punto di riferimento per strategia e investimenti.</p>
+        <h2 id="titolo-gruppo" class="kicker rv">Chi siamo</h2>
+        <div class="about">
+          <p class="statement rv">Napan Group nasce per riunire sotto <mark>un'unica guida</mark> società che operano in settori diversi ma <mark>complementari</mark>.</p>
+          <div class="prose rv" style="--d:.15s">
+            <p>La holding non vende servizi al pubblico: detiene le partecipazioni, ne cura la gestione finanziaria e mette a disposizione delle società controllate competenze, risorse e una visione comune.</p>
+            <p>Ogni società mantiene il proprio marchio e la propria autonomia operativa, con un unico punto di riferimento per strategia e investimenti.</p>
+            <ul class="facts">
+              <li><b data-count="3">3</b><span>società partecipate</span></li>
+              <li><b data-count="4">4</b><span>settori di attività</span></li>
+              <li><b data-count="1">1</b><span>regia per strategia e investimenti</span></li>
+            </ul>
           </div>
         </div>
 
         <ul class="roles" aria-label="Il ruolo della holding">
-          <li>
+          <li class="rv">
+            <span class="n">01</span>
+            <svg class="ico ico-draw" viewBox="0 0 64 64" aria-hidden="true"><circle pathLength="1" cx="32" cy="32" r="24"/><path pathLength="1" d="M40 24 L35 35 L24 40 L29 29 Z"/><path pathLength="1" d="M32 4 V10 M32 54 V60 M4 32 H10 M54 32 H60"/></svg>
             <h3>Indirizzo strategico</h3>
             <p>Definiamo gli obiettivi di medio e lungo periodo di ciascuna società e verifichiamo che le scelte operative li rispettino.</p>
           </li>
-          <li>
+          <li class="rv" style="--d:.12s">
+            <span class="n">02</span>
+            <svg class="ico ico-draw" viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M8 56 H58"/><rect pathLength="1" x="12" y="36" width="8" height="20"/><rect pathLength="1" x="28" y="26" width="8" height="30"/><rect pathLength="1" x="44" y="14" width="8" height="42"/><path pathLength="1" d="M10 28 L26 16 L36 20 L54 6"/></svg>
             <h3>Gestione finanziaria</h3>
             <p>Coordiniamo risorse, investimenti e controllo di gestione, perché ogni società possa contare su basi solide.</p>
           </li>
-          <li>
+          <li class="rv" style="--d:.24s">
+            <span class="n">03</span>
+            <svg class="ico ico-draw" viewBox="0 0 64 64" aria-hidden="true"><circle pathLength="1" cx="32" cy="14" r="7"/><circle pathLength="1" cx="12" cy="48" r="7"/><circle pathLength="1" cx="52" cy="48" r="7"/><path pathLength="1" d="M28 20 L16 42 M36 20 L48 42 M19 48 H45"/></svg>
             <h3>Sviluppo del gruppo</h3>
             <p>Valutiamo nuove opportunità e favoriamo le sinergie tra le società, dalla clientela condivisa agli immobili in uso.</p>
           </li>
@@ -64,56 +91,147 @@ description: "Napan Group è la holding che detiene e coordina Sirent, Maka, Mak
       </div>
     </section>
 
+    <!-- Struttura del gruppo -->
+    <section class="section dark" id="struttura" aria-labelledby="titolo-struttura">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker rv">Struttura del gruppo</p>
+            <h2 id="titolo-struttura" class="rv" style="--d:.1s">Una holding, <em>quattro attività.</em></h2>
+          </div>
+          <p class="side rv" style="--d:.2s">Napan detiene le partecipazioni in tre società. Maka Energy è il ramo di Maka dedicato all'energia.</p>
+        </div>
+        <div class="org rv-group">
+          <div class="org-top"><img src="/assets/img/logo-napan-negativo.svg" alt="Napan Group" width="166" height="64"><small>Holding</small></div>
+          <div class="org-trunk"></div>
+          <div class="org-row">
+            <div class="org-item">
+              <a class="org-card" href="#sirent"><img src="/assets/img/societa/sirent.svg" alt="Sirent" width="137" height="46"><span>Noleggio a lungo termine</span></a>
+            </div>
+            <div class="org-item has-branch">
+              <a class="org-card" href="#maka"><img class="maka-logo" src="/assets/img/societa/maka.svg" alt="Maka" width="113" height="52"><span>Contact center</span></a>
+              <div class="org-branch">
+                <a class="org-card" href="#maka-energy"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true">{{ ico_bolt }}</svg><span><b>Maka Energy</b>Efficientamento energetico</span></a>
+              </div>
+            </div>
+            <div class="org-item">
+              <a class="org-card" href="#naren"><img src="/assets/img/societa/naren-orizzontale.svg" alt="Naren Immobiliare" width="211" height="46"><span>Gestione e locazione immobili</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le società -->
     <section class="section section--stone" id="societa" aria-labelledby="titolo-societa">
       <div class="wrap">
         <div class="section-head">
-          <h2 id="titolo-societa">Le società del gruppo</h2>
-          <p>Ogni società ha un proprio marchio e un proprio sito, dove trovi servizi, offerte e contatti dedicati.</p>
+          <div>
+            <p class="kicker rv">Le società del gruppo</p>
+            <h2 id="titolo-societa" class="rv" style="--d:.1s">Marchi indipendenti, <em>una sola visione.</em></h2>
+          </div>
+          <p class="side rv" style="--d:.2s">Ogni società ha un proprio marchio e un proprio sito, dove trovi servizi, offerte e contatti dedicati.</p>
         </div>
 
         <ul class="companies">
-{% include company.html name="Sirent" sector="Noleggio a lungo termine" desc=sirent_desc url=sirent_url link="Visita il sito di Sirent" %}
-{% include company.html name="Maka" sector="Contact center" desc=maka_desc url=maka_url link="Visita il sito di Maka" branch_name="Maka Energy" branch_desc=energy_desc branch_url=energy_url %}
-{% include company.html name="Naren Immobiliare" sector="Gestione e locazione immobili" desc=naren_desc url=naren_url link="Visita il sito di Naren" %}
+          <li class="company c-sirent rv" id="sirent">
+            <div class="logo"><img src="/assets/img/societa/sirent.svg" alt="Sirent" width="155" height="52"></div>
+            <p class="sector">Mobilità</p>
+            <h3>Noleggio a lungo termine</h3>
+            <p class="desc">{{ sirent_desc | escape }}</p>
+{%- if sirent_url != "" %}
+            <a class="visit" href="{{ sirent_url | escape }}" rel="noopener"><span>Visita il sito di Sirent</span></a>
+{%- endif %}
+            <svg class="watermark" viewBox="0 0 64 64" aria-hidden="true">{{ ico_car }}</svg>
+          </li>
+          <li class="company c-maka rv" id="maka" style="--d:.1s">
+            <div class="logo"><img class="maka-logo" src="/assets/img/societa/maka.svg" alt="Maka" width="131" height="60"></div>
+            <p class="sector">Servizi alle imprese</p>
+            <h3>Contact center</h3>
+            <p class="desc">{{ maka_desc | escape }}</p>
+{%- if maka_url != "" %}
+            <a class="visit" href="{{ maka_url | escape }}" rel="noopener"><span>Visita il sito di Maka</span></a>
+{%- endif %}
+            <svg class="watermark" viewBox="0 0 64 64" aria-hidden="true">{{ ico_headset }}</svg>
+          </li>
+          <li class="company c-energy rv" id="maka-energy">
+            <div class="logo"><span class="wordmark"><svg class="ico" viewBox="0 0 64 64" aria-hidden="true">{{ ico_bolt }}</svg>Maka Energy</span></div>
+            <p class="sector">Energia</p>
+            <h3>Efficientamento energetico</h3>
+            <p class="desc"><span class="branch-of">Un ramo di Maka</span><br>Maka Energy {{ energy_desc | escape }}</p>
+{%- if energy_url != "" %}
+            <a class="visit" href="{{ energy_url | escape }}" rel="noopener"><span>Visita il sito di Maka Energy</span></a>
+{%- endif %}
+            <svg class="watermark" viewBox="0 0 64 64" aria-hidden="true">{{ ico_bolt }}</svg>
+          </li>
+          <li class="company c-naren rv" id="naren" style="--d:.1s">
+            <div class="logo"><img src="/assets/img/societa/naren-orizzontale.svg" alt="Naren Immobiliare" width="239" height="52"></div>
+            <p class="sector">Immobili</p>
+            <h3>Gestione e locazione immobili</h3>
+            <p class="desc">{{ naren_desc | escape }}</p>
+{%- if naren_url != "" %}
+            <a class="visit" href="{{ naren_url | escape }}" rel="noopener"><span>Visita il sito di Naren</span></a>
+{%- endif %}
+            <svg class="watermark" viewBox="0 0 64 64" aria-hidden="true">{{ ico_building }}</svg>
+          </li>
         </ul>
       </div>
     </section>
 
-    <section class="section" id="contatti" aria-labelledby="titolo-contatti">
-      <div class="wrap contacts">
-        <div class="intro">
-          <h2 id="titolo-contatti">Contatti</h2>
-          <p>Per informazioni sul gruppo, proposte di collaborazione o richieste istituzionali, scrivici. Per servizi e preventivi rivolgiti direttamente alla società di riferimento.</p>
-{%- if email_info != "" %}
-          <a class="btn btn-navy" href="mailto:{{ email_info | escape }}">Scrivi una email</a>
-{%- endif %}
+    <!-- Video del gruppo -->
+    <section class="section dark" id="video" aria-labelledby="titolo-video">
+      <div class="wrap film">
+        <div>
+          <p class="kicker rv">Video</p>
+          <h2 id="titolo-video" class="rv" style="--d:.1s">Il gruppo <em>in venti secondi.</em></h2>
+          <p class="rv" style="--d:.2s">Le società di Napan Group, una dopo l'altra: chi sono, di cosa si occupano e come si collegano alla holding.</p>
         </div>
-        <dl>
-{%- if sede != "" %}
-          <div>
-            <dt>Sede legale</dt>
-            <dd>{{ sede | escape }}</dd>
+        <div class="player rv" style="--d:.15s" id="player">
+          <video src="{{ video_gruppo | escape }}"{% if video_gruppo_std %} poster="/assets/video/napan-gruppo.jpg"{% endif %} preload="none" playsinline aria-label="Video di presentazione di Napan Group"></video>
+          <button class="play-btn" type="button" aria-label="Guarda il video"><span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contatti -->
+    <section class="section" id="contatti" aria-labelledby="titolo-contatti">
+      <div class="wrap">
+        <div class="contact-card rv">
+          <div class="intro">
+            <p class="kicker">Contatti</p>
+            <h2 id="titolo-contatti">Parliamo.</h2>
+            <p>Per informazioni sul gruppo, proposte di collaborazione o richieste istituzionali, scrivici. Per servizi e preventivi rivolgiti direttamente alla società di riferimento.</p>
+{%- if email_info != "" %}
+            <a class="btn btn-brass" href="mailto:{{ email_info | escape }}">Scrivi una email</a>
+{%- endif %}
           </div>
+          <dl>
+{%- if sede != "" %}
+            <div>
+              <dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Sede legale</dt>
+              <dd>{{ sede | escape }}<br><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query={{ sede | url_encode }}" rel="noopener">Apri in Google Maps ↗</a></dd>
+            </div>
 {%- endif %}
 {%- if email_info != "" %}
-          <div>
-            <dt>Email</dt>
-            <dd><a href="mailto:{{ email_info | escape }}">{{ email_info | escape }}</a></dd>
-          </div>
+            <div>
+              <dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</dt>
+              <dd><a href="mailto:{{ email_info | escape }}">{{ email_info | escape }}</a></dd>
+            </div>
 {%- endif %}
 {%- if pec != "" %}
-          <div>
-            <dt>PEC</dt>
-            <dd><a href="mailto:{{ pec | escape }}">{{ pec | escape }}</a></dd>
-          </div>
+            <div>
+              <dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>PEC</dt>
+              <dd><a href="mailto:{{ pec | escape }}">{{ pec | escape }}</a></dd>
+            </div>
 {%- endif %}
 {%- if telefono != "" %}
-          <div>
-            <dt>Telefono</dt>
-            <dd><a href="tel:{{ tel_link | escape }}">{{ telefono | escape }}</a></dd>
-          </div>
+            <div>
+              <dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Telefono</dt>
+              <dd><a href="tel:{{ tel_link | escape }}">{{ telefono | escape }}</a></dd>
+            </div>
 {%- endif %}
-        </dl>
+          </dl>
+        </div>
       </div>
     </section>
   </main>

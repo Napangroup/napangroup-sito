@@ -51,7 +51,7 @@
   </script>
 {%- endif %}
 </head>
-<body>
+<body{% if page.url == "/" %} class="is-home"{% endif %}>
 {% include header.html %}
 {{ content }}
 {% include footer.html %}

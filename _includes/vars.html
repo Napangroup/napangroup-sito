@@ -27,4 +27,10 @@
 {%- assign dpo = s.dpo | strip -%}
 {%- assign durata_log = s.durata_log | strip -%}
 {%- assign aggiornamento = s.data_aggiornamento | strip -%}
+{%- assign video_apertura = s.video_apertura | strip -%}
+{%- assign video_apertura_std = false -%}
+{%- if video_apertura == "" or video_apertura == "/assets/video/napan-apertura.mp4" -%}{%- assign video_apertura = "/assets/video/napan-apertura.mp4" -%}{%- assign video_apertura_std = true -%}{%- endif -%}
+{%- assign video_gruppo = s.video_gruppo | strip -%}
+{%- assign video_gruppo_std = false -%}
+{%- if video_gruppo == "" or video_gruppo == "/assets/video/napan-gruppo.mp4" -%}{%- assign video_gruppo = "/assets/video/napan-gruppo.mp4" -%}{%- assign video_gruppo_std = true -%}{%- endif -%}
 {%- if ragione != "" -%}{%- assign nome = ragione -%}{%- else -%}{%- assign nome = "Napan Group" -%}{%- endif -%}

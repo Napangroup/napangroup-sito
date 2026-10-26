@@ -1,4 +1,8 @@
 # Pannello di gestione del sito Napan Group (Pages CMS, app.pagescms.org)
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
 content:
   - name: impostazioni
     label: Dati del sito
@@ -110,6 +114,20 @@ content:
       - name: naren_descrizione
         label: "Naren Immobiliare: descrizione"
         type: text
+
+      # ---------- Video
+      - name: video_apertura
+        label: "Video di apertura"
+        type: file
+        description: "MP4 senza audio, 10–20 secondi, possibilmente sotto i 10 MB. Lascia vuoto per il video animato del gruppo"
+        options:
+          extensions: [mp4]
+      - name: video_gruppo
+        label: "Video di presentazione"
+        type: file
+        description: "MP4 mostrato nella sezione Video. Lascia vuoto per il video del gruppo già pronto"
+        options:
+          extensions: [mp4]
 
       # ---------- Informative privacy e cookie
       - name: fornitore_email
